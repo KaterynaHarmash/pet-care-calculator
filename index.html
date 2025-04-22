@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Калькулятор догляду за собакою</title>
+  </head>
+
+  <body class="bg-gradient-to-br from-blue-50 to-teal-100 min-h-screen flex items-center justify-center p-4 overflow-x-hidden">
+    <main class="w-full max-w-md mx-auto bg-white rounded-xl shadow-xl p-6">
+      
+      <header class="text-center mb-6">
+        <h1 class="text-2xl font-bold text-gray-800">Калькулятор догляду за собакою 🐶</h1>
+        <p class="text-sm text-gray-500 mt-1">
+          Розрахуй щоденну норму часу для догляду за собакою на основі ваги та активностей.
+        </p>
+      </header>
+
+      <form id="care-form" class="space-y-6">
+        
+        <!-- Вага -->
+        <fieldset>
+          <legend class="text-base font-semibold text-gray-700 mb-2">Інформація про собаку</legend>
+          <label for="weight" class="block text-sm font-medium text-gray-600 mb-1">Вага собаки (кг):</label>
+          
+          <div class="relative">
+            <input
+              type="number"
+              id="weight"
+              name="weight"
+              min="1"
+              required
+              aria-describedby="weight-tooltip weight-hint"
+              class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-teal-400 focus:border-teal-400 transition"
+            />
+            <div
+              class="absolute top-full left-0 mt-1 bg-red-500 text-white text-sm px-3 py-2 rounded-md shadow-md opacity-0 pointer-events-none transition-opacity"
+              id="weight-tooltip"
+              role="alert"
+              aria-hidden="true"
+            >
+              Будь ласка, введіть коректну вагу 🐾
+            </div>
+          </div>
+
+          <small id="weight-hint" class="block mt-1 text-xs text-gray-400">
+            Введіть вагу собаки у кілограмах. Наприклад, 10
+          </small>
+        </fieldset>
+
+        <!-- Активності -->
+        <fieldset>
+          <legend class="text-base font-semibold text-gray-700 mb-2">Активності</legend>
+          <div class="space-y-2">
+            <label class="flex items-center space-x-2 text-sm text-gray-700">
+              <input type="checkbox" id="walk" name="activity" value="walk" class="accent-teal-500 w-4 h-4" />
+              <span>Прогулянка</span>
+            </label>
+            <label class="flex items-center space-x-2 text-sm text-gray-700">
+              <input type="checkbox" id="training" name="activity" value="training" class="accent-teal-500 w-4 h-4" />
+              <span>Дресура</span>
+            </label>
+            <label class="flex items-center space-x-2 text-sm text-gray-700">
+              <input type="checkbox" id="play" name="activity" value="play" class="accent-teal-500 w-4 h-4" />
+              <span>Ігри</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <!-- Кнопка -->
+        <button
+          type="submit"
+          class="w-full bg-teal-500 hover:bg-teal-600 text-white py-2 px-4 rounded-md font-semibold transition"
+        >
+          Розрахувати
+        </button>
+      </form>
+
+      <!-- Результат -->
+      <section aria-live="polite" class="mt-6">
+        <p
+          id="result"
+          class="text-center text-lg font-semibold text-gray-800 opacity-0 transition-opacity duration-500"
+        ></p>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
