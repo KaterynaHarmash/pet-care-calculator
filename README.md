@@ -23,7 +23,6 @@ This project is a simple, responsive calculator that helps estimate the recommen
 📁 pet-care-calculator
 ├── index.html        // Main layout and Tailwind classes
 ├── script.js         // JS logic for validation and calculation
-├── style.css         // Optional: for any additional styling
 └── README.md         // This file!
 ```
 
